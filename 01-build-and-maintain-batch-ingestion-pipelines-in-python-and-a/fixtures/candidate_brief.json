@@ -1,0 +1,27 @@
+{
+  "simulation_id": "SIM-001",
+  "title": "Privacy-Safe Claims Run Recovery",
+  "scenario": "At 7:20 a.m. the overnight Zenith claims load is failed. A partial transfer, a redelivery, ambiguous dates, sensitive member fields, and a failed downstream dbt test are present. The dashboard refresh is due at 9 a.m.",
+  "objectives": [
+    "Distinguish business, arrival, and processing dates and choose a bounded recovery scope",
+    "Map supported fields, reject malformed rows, and leave unsupported fields unresolved",
+    "Remove or transform member data according to the supplied privacy policy",
+    "Use reconciliation, uniqueness, dependencies, and dbt results to decide refresh readiness"
+  ],
+  "environment": {
+    "platform": "Nuvepro GenAI Sandbox",
+    "access": "No external network or cloud credentials",
+    "resource_bounds": "One local repository process, one in-memory SQL database, and supplied synthetic fixtures only",
+    "test_command": "python -m unittest discover -s tests -v",
+    "cleanup": "Delete generated decision records; the sandbox auto-expires after the assessment.",
+    "production_approximation": "SFTP, Airflow, BigQuery, dbt, and Microsoft 365 Copilot interactions are represented by deterministic evidence and local validation rather than live services."
+  },
+  "initial_state": [
+    "The initial SFTP transfer is incomplete and lacks its trailer",
+    "A complete redelivery has a different checksum",
+    "One source record is duplicated and one has an invalid date",
+    "The latest required dbt uniqueness test is failing"
+  ],
+  "task": "Produce one evidence-linked recovery and refresh-readiness decision record. Do not authorize a broad rerun or dashboard release while a required test is failing.",
+  "time_budget_minutes": 90
+}

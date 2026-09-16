@@ -1,0 +1,3 @@
+row_kind,clm_no,memb_ref,svc_dt,paid_amt,prov_cd,status_cd,member_name,email,phone,dob,postcode,notes,plan_txt
+DETAIL,C1001,M-1001,14/02/2025,100.50,P01,P,Asha Rao,asha@example.test,+91-9000000001,1988-03-22,411001,routine follow-up,GOLD-X
+DETAIL,C1002,M-1002,14/02/2025,200.00,P02,D,Vikram Sen,vikram@example.test,+91-9000000002,1979-11-03,560001,transfer ended before trailer,SILVER-9

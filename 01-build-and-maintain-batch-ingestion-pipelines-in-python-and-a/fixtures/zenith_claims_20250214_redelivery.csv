@@ -1,0 +1,5 @@
+claim_no,service_on,paid_text,member_code,provider_ref,state,dx_desc
+C-Z-001,13/02/2025,"1,500.00",ZEN-M-0001,PR-101,S,viral fever
+C-Z-002,13/02/2025,0.00,ZEN-M-0002,PR-102,D,knee pain
+C-Z-002,13/02/2025,"9,200.00",ZEN-M-0002,PR-102,S,knee pain corrected
+C-Z-003,14/02/2025,"12,500.00",ZEN-M-0003,PR-999,P,follow-up visit
